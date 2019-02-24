@@ -6,8 +6,6 @@ import { ComponentsModule } from './components/components.module';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService } from './services/in-memory-data.service';
 import { RealtimemonitoringComponent } from './pages/vehicle-monitoring/realtime-monitoring/realtime-monitoring.component';
 
 
@@ -30,11 +28,6 @@ const routes: Routes = [
     CommonModule,
     NgZorroAntdModule,
     FormsModule,
-
-    HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, { dataEncapsulation: false, apiBase: 'api/' }
-    ),
-
     RouterModule.forRoot(routes)
   ],
   exports: [RouterModule],
