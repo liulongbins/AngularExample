@@ -1,0 +1,62 @@
+<form nz-form [nzLayout]="'inline'">
+    <nz-form-item>
+        <nz-form-control>
+            <nz-input-group>
+                <input name="vin" [(ngModel)]="this.searchParameter.vin" nz-input placeholder="请输入VIN码">
+            </nz-input-group>
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-control>
+            <nz-input-group>
+                <input name="carId" [(ngModel)]="this.searchParameter.carId" nz-input placeholder="请输入车牌号">
+            </nz-input-group>
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-control>
+            <nz-input-group>
+                <app-select-input name="carType" [(model)]="this.searchParameter.carModelId" [placeholder]="'请选择车辆类型'"
+                    [list]="this.carTypes"></app-select-input>
+            </nz-input-group>
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-control>
+            <nz-input-group>
+                <app-select-input name="store" [(model)]="this.searchParameter.storeId" [placeholder]="'请选择专营店'"
+                    [list]="this.stores">
+                </app-select-input>
+            </nz-input-group>
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-control>
+            <nz-input-group>
+                <app-select-input name="province" [(model)]="this.searchParameter.provinceId" [placeholder]="'请选择省'"
+                    [list]="this.provinces"></app-select-input>
+            </nz-input-group>
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-control>
+            <nz-input-group>
+                <app-select-input name="city" [(model)]="this.searchParameter.cityId" [placeholder]="'请选择市'"
+                    [list]="this.citys">
+                </app-select-input>
+            </nz-input-group>
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-control>
+            <nz-input-group>
+                <button nz-button nzType="default" (click)="search()">高级搜索</button>
+                <button nz-button nzType="primary" (click)="search()">搜索</button>
+                <button nz-button nzType="primary" (click)="reset()" nzGhost>重置</button>
+            </nz-input-group>
+        </nz-form-control>
+    </nz-form-item>
+    <app-table-bordered [dataSet]="this.tableList" [dataHead]="this.tableHead"></app-table-bordered>
+</form>
+<ng-template #prefixUser><i nz-icon type="user"></i></ng-template>
+<ng-template #prefixLock><i nz-icon type="lock"></i></ng-template>

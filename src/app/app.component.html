@@ -1,0 +1,18 @@
+<nz-layout class="layout">
+  <nz-header>
+    <div class="logo"></div>
+  </nz-header>
+  <nz-layout>
+    <nz-sider [nzWidth]="200" style="background:#fff">
+      <app-menu [list] = "this.menuList">
+      </app-menu>
+    </nz-sider>
+    <nz-layout style="padding:0 24px 24px">
+      <app-bread></app-bread>
+      <nz-content style="background:#fff; padding: 24px; min-height: 280px;">
+        {{this.roter}}
+        <router-outlet></router-outlet>
+      </nz-content>
+    </nz-layout>
+  </nz-layout>
+</nz-layout>

@@ -1,0 +1,20 @@
+<ul nz-menu [nzTheme]="'dark'" [nzMode]="'inline'" [nzInlineCollapsed]="isCollapsed">
+
+
+  <li nz-submenu *ngFor="let item of list">
+    <span title><i nz-icon type="{{item.icon}}"></i> {{item.name}}</span>
+    <ul nz-menu [nzTheme]="'dark'" [nzMode]="'inline'" [nzInlineCollapsed]="isCollapsed">
+      <li nz-submenu *ngFor="let itemchild of item.list">
+        <span title>
+          <a  routerLink="{{itemchild.link}}">
+            {{itemchild.name}}
+          </a>
+        </span>
+      </li>
+
+    </ul>
+  </li>
+
+</ul>
+
+

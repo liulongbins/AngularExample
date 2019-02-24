@@ -1,0 +1,25 @@
+<nz-table #rowSelectionTable [nzData]="dataSet" (nzCurrentPageDataChange)="currentPageDataChange($event)"
+  (nzPageIndexChange)="refreshStatus()" (nzPageSizeChange)="refreshStatus()" [nzShowSizeChanger]=true>
+  <thead>
+    <tr>
+      <th [(nzChecked)]="allChecked" (nzCheckedChange)="checkAll($event)" *ngFor="let item of this.dataHead;"
+        [nzShowCheckbox]="item.nzShowCheckbox">{{item.name}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of dataSet">
+      <td nzShowCheckbox [(nzChecked)]="data.checked" (nzCheckedChange)="refreshStatus()"></td>
+      <td>{{data.serialNumber}}</td>
+      <td>{{data.vin}}</td>
+      <td>{{data.carId}}</td>
+      <td>{{data.carModel}}</td>
+      <td>{{data.carState}}</td>
+      <td>{{data.time}}</td>
+      <td>{{data.position}}</td>
+      <td>{{data.electricity}}</td>
+      <td>{{data.carSpeed }}</td>
+      <td>{{data.mileage}}</td>
+      <td>{{data.soc}}</td>
+    </tr>
+  </tbody>
+</nz-table>

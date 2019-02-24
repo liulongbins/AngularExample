@@ -1,0 +1,4 @@
+<nz-select style="width:174px" nzShowSearch nzAllowClear nzPlaceHolder={{this.placeholder}} [(ngModel)]="model">
+  <nz-option nzCustomContent *ngFor="let item of list" nzLabel={{item.name}} nzValue={{item.id}}>{{item.name}}
+  </nz-option>
+</nz-select>
